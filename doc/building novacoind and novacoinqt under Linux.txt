@@ -1,10 +1,10 @@
-﻿Сборка для Linux
+Сборка для Linux
 Если предпочитаете компилировать свои собственные бинарные файлы, тогда нужны пакеты разработчика:
 
 Ubuntu/Debian:
  sudo apt-get install git qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev
    libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev
-   libssl-dev libdb++-dev libqrencode-dev
+   libssl1.0-dev libdb++-dev libqrencode-dev
 
 Если у вас возникла ошибка при установке qt4-qmake (Возникает на Ubuntu 14.04.2 и возможно в других версиях)
 libcheese-gtk23 : Depends: libclutter-gtk-1.0-0 (>= 0.91.8) but it is not going to be installed
@@ -13,6 +13,9 @@ libcheese7 : Depends: libclutter-gst-2.0-0 (>= 0.10.0) but it is not going to be
              Depends: gstreamer1.0-clutter but it is not going to be installed
 libclutter-1.0-0 : Depends: libcogl-pango15 (>= 1.15.8) but it is not going to be installed
                    Depends: libcogl15 (>= 1.15.8) but it is not going to be installed
+
+Для свежих версий Debian (strech+), возможно потребуется установить дополнительные библиотеки:
+ sudo apt-get install libcurl4-openssl-dev install libdb5.3++-dev
 
 То введите
 sudo apt-get install  libglew-dev libcheese7 libcheese-gtk23 libclutter-gst-2.0-0 libcogl15 libclutter-gtk-1.0-0 libclutter-1.0-0  xserver-xorg-input-all
