@@ -2,24 +2,33 @@
 Если предпочитаете компилировать свои собственные бинарные файлы, тогда нужны пакеты разработчика:
 
 Ubuntu/Debian:
- sudo apt-get install git qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev
-   libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev
+ sudo apt-get install git qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
+   libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
    libssl1.0-dev libdb++-dev libqrencode-dev
+   
+Дополнительно для Debian 10+:
+ { 
+    Создать /etc/apt/sources.list.d/jessie.list с указанием репо
+      deb http://ftp.ru.debian.org/debian/ jessie main contrib non-free
+      deb-src http://ftp.ru.debian.org/debian/ jessie main contrib non-free    
+ }  
+ sudo apt-get update
+ sudo apt-get purge libssl-dev    
+ sudo apt-get install libssl-dev/jessie libcurl4-openssl-dev libdb5.3++-dev
+   
 
 Если у вас возникла ошибка при установке qt4-qmake (Возникает на Ubuntu 14.04.2 и возможно в других версиях)
-libcheese-gtk23 : Depends: libclutter-gtk-1.0-0 (>= 0.91.8) but it is not going to be installed
+ libcheese-gtk23 : Depends: libclutter-gtk-1.0-0 (>= 0.91.8) but it is not going to be installed
                   Depends: libcogl15 (>= 1.15.8) but it is not going to be installed
-libcheese7 : Depends: libclutter-gst-2.0-0 (>= 0.10.0) but it is not going to be installed
+ libcheese7 : Depends: libclutter-gst-2.0-0 (>= 0.10.0) but it is not going to be installed
              Depends: gstreamer1.0-clutter but it is not going to be installed
-libclutter-1.0-0 : Depends: libcogl-pango15 (>= 1.15.8) but it is not going to be installed
+ libclutter-1.0-0 : Depends: libcogl-pango15 (>= 1.15.8) but it is not going to be installed
                    Depends: libcogl15 (>= 1.15.8) but it is not going to be installed
 
 
 То введите
-sudo apt-get install  libglew-dev libcheese7 libcheese-gtk23 libclutter-gst-2.0-0 libcogl15 libclutter-gtk-1.0-0 libclutter-1.0-0  xserver-xorg-input-all
-
-Для свежих версий Debian (strech+), возможно потребуется установить дополнительные библиотеки:
- sudo apt-get install libcurl4-openssl-dev libdb5.3++-dev
+ sudo apt-get install  libglew-dev libcheese7 libcheese-gtk23 libclutter-gst-2.0-0 libcogl15 libclutter-gtk-1.0-0 libclutter-1.0-0 xserver-xorg-input-all
+ 
 
 
 openSUSE(проверено на версии 13.2):
